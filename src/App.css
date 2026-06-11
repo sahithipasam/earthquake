@@ -1,0 +1,371 @@
+@import url('https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@400;500;700;800&family=Space+Grotesk:wght@500;700&display=swap');
+
+:root {
+  --bg-dark: #12233a;
+  --bg-mid: #183a58;
+  --panel: rgba(15, 31, 51, 0.72);
+  --panel-border: rgba(255, 255, 255, 0.14);
+  --text: #e8f2ff;
+  --muted: #bdd6ef;
+  --aqua: #6dd3ce;
+  --sun: #ffd166;
+  --orange: #f08a5d;
+  --danger: #ff6b6b;
+  --ok: #7ee081;
+  --radius: 22px;
+  --shadow: 0 18px 44px rgba(3, 8, 18, 0.36);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.app {
+  min-height: 100svh;
+  padding: 28px 18px 36px;
+  display: grid;
+  gap: 18px;
+  width: min(1120px, 100%);
+  margin: 0 auto;
+}
+
+.card {
+  border: 1px solid var(--panel-border);
+  background:
+    linear-gradient(140deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.01) 45%),
+    var(--panel);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  backdrop-filter: blur(12px);
+  padding: 18px;
+}
+
+.hero {
+  padding: 30px 22px;
+  background:
+    radial-gradient(circle at 8% 18%, rgba(109, 211, 206, 0.28), transparent 30%),
+    radial-gradient(circle at 85% 0%, rgba(255, 209, 102, 0.24), transparent 36%),
+    linear-gradient(180deg, rgba(25, 49, 76, 0.95), rgba(13, 30, 49, 0.95));
+}
+
+h1,
+h2,
+h3 {
+  margin: 0;
+  color: var(--text);
+  font-family: 'Space Grotesk', 'Segoe UI', sans-serif;
+  line-height: 1.05;
+}
+
+h1 {
+  font-size: clamp(2rem, 4.4vw, 4.2rem);
+  margin-top: 4px;
+}
+
+h2 {
+  font-size: clamp(1.4rem, 2.3vw, 2.1rem);
+}
+
+p,
+span,
+button,
+label,
+select,
+input {
+  font-family: 'Bricolage Grotesque', 'Segoe UI', sans-serif;
+}
+
+.sectionTag,
+.sectionNum {
+  margin: 0;
+  color: var(--sun);
+  font-size: 0.8rem;
+  letter-spacing: 0.08em;
+  font-weight: 700;
+}
+
+.heroText {
+  margin: 14px 0 0;
+  max-width: 62ch;
+  color: var(--muted);
+}
+
+.heroStats {
+  margin-top: 18px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  align-items: center;
+}
+
+.heroStats span,
+.heroStats strong {
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  border-radius: 999px;
+  padding: 7px 12px;
+  color: var(--text);
+  background: rgba(6, 17, 29, 0.4);
+}
+
+.heroStats strong {
+  border-color: rgba(126, 224, 129, 0.8);
+  color: #c9ffd1;
+}
+
+.sectionHead {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 14px;
+}
+
+.labGrid {
+  display: grid;
+  grid-template-columns: 1.35fr 1fr;
+  gap: 14px;
+}
+
+.sceneWrap {
+  border-radius: 18px;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+}
+
+.scene {
+  width: 100%;
+  display: block;
+}
+
+.scene.running {
+  animation: jitter 0.95s ease-in-out infinite;
+}
+
+@keyframes jitter {
+  0%,
+  100% {
+    transform: translate(0, 0) rotate(0deg);
+  }
+  20% {
+    transform: translate(-0.9px, 0.5px) rotate(-0.06deg);
+  }
+  50% {
+    transform: translate(1.2px, -0.4px) rotate(0.07deg);
+  }
+  80% {
+    transform: translate(-0.6px, 0.4px) rotate(-0.05deg);
+  }
+}
+
+.controlPanel {
+  display: grid;
+  gap: 13px;
+  align-content: start;
+}
+
+.controlPanel label {
+  color: var(--text);
+  display: grid;
+  gap: 8px;
+  font-size: 0.95rem;
+}
+
+input[type='range'] {
+  width: 100%;
+  accent-color: var(--sun);
+}
+
+select {
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  background: rgba(8, 19, 33, 0.66);
+  color: var(--text);
+  min-height: 40px;
+  padding: 0 10px;
+}
+
+.buttonRow {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+button {
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  min-height: 42px;
+  padding: 0 15px;
+  background: linear-gradient(135deg, #ffd166, #f08a5d);
+  color: #102033;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+button.ghost {
+  background: rgba(11, 25, 40, 0.55);
+  color: var(--text);
+}
+
+button:hover {
+  transform: translateY(-1px);
+}
+
+.miniGrid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 8px;
+}
+
+.miniGrid article {
+  border-radius: 14px;
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  padding: 10px;
+  background: rgba(9, 22, 36, 0.48);
+  display: grid;
+  gap: 4px;
+}
+
+.miniGrid span,
+.hint,
+.quizCount {
+  color: var(--muted);
+}
+
+.labExplain {
+  margin-top: 12px;
+  border-radius: 14px;
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  background: rgba(7, 18, 31, 0.5);
+  padding: 12px 14px;
+}
+
+.labExplain p {
+  margin: 0;
+  color: var(--text);
+}
+
+.scenarioRow {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.scenarioBtn {
+  border-radius: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  background: rgba(9, 21, 35, 0.58);
+  color: var(--text);
+  min-height: 96px;
+  display: grid;
+  gap: 4px;
+  align-content: center;
+  justify-items: start;
+}
+
+.waveSection .seismo {
+  width: 100%;
+  max-width: 420px;
+  display: block;
+  margin-top: 8px;
+}
+
+.seismo rect {
+  fill: rgba(9, 21, 35, 0.75);
+  stroke: rgba(255, 255, 255, 0.2);
+}
+
+.seismo path {
+  fill: none;
+  stroke: var(--aqua);
+  stroke-width: 3;
+  stroke-linecap: round;
+}
+
+.choiceList {
+  display: grid;
+  gap: 8px;
+  margin: 12px 0;
+}
+
+.safetyIntro {
+  margin: 8px 0 6px;
+  color: var(--muted);
+}
+
+.choice {
+  border-radius: 14px;
+  text-align: left;
+  justify-content: flex-start;
+  min-height: 48px;
+  background: rgba(10, 23, 38, 0.6);
+  color: var(--text);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+.choice.recommended {
+  border-left: 5px solid var(--aqua);
+  background: linear-gradient(90deg, rgba(109,211,206,0.04), rgba(10,23,38,0.6));
+}
+
+.choice.picked {
+  box-shadow: inset 0 0 0 2px rgba(109,211,206,0.06);
+}
+
+.recommendedNote {
+  margin-left: auto;
+  color: var(--aqua);
+  font-size: 0.8rem;
+  font-weight: 700;
+}
+
+.choice.active {
+  border-color: rgba(255, 209, 102, 0.95);
+  background: rgba(255, 209, 102, 0.18);
+}
+
+.checkBtn {
+  background: linear-gradient(135deg, #6dd3ce, #73c2fb);
+  color: #072033;
+}
+
+.feedback {
+  margin-top: 10px;
+  border-radius: 12px;
+  padding: 10px 12px;
+}
+
+.feedback.ok {
+  background: rgba(126, 224, 129, 0.2);
+  border: 1px solid rgba(126, 224, 129, 0.45);
+}
+
+.feedback.bad {
+  background: rgba(255, 107, 107, 0.18);
+  border: 1px solid rgba(255, 107, 107, 0.45);
+}
+
+.quizQ {
+  font-size: 1.1rem;
+  color: var(--text);
+  margin: 0 0 10px;
+}
+
+.resultBox {
+  border-radius: 14px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  background: rgba(7, 18, 31, 0.58);
+  padding: 12px;
+}
+
+@media (max-width: 900px) {
+  .labGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .scenarioRow {
+    grid-template-columns: 1fr;
+  }
+
+  .miniGrid {
+    grid-template-columns: 1fr;
+  }
+}
