@@ -71,7 +71,7 @@ function App() {
   const [soil, setSoil] = useState('mixed')
   const [running, setRunning] = useState(true)
   const [phase, setPhase] = useState(0)
-  const [pickedSafety, setPickedSafety] = useState([])
+
   const [quizStep, setQuizStep] = useState(0)
   const [quizChoice, setQuizChoice] = useState(null)
   const [quizAnswered, setQuizAnswered] = useState(false)
@@ -111,10 +111,7 @@ function App() {
     { id: 'evacuate', label: 'Only evacuate after shaking stops and it is safe' },
   ]
 
-  const toggleSafety = (id) => {
-    setPickedSafety((list) => (list.includes(id) ? list.filter((x) => x !== id) : [...list, id]))
-  }
-
+  
   const handleQuizChoice = (index) => {
     if (quizAnswered) return
     setQuizChoice(index)
@@ -137,11 +134,12 @@ function App() {
   }
 
   const resetQuiz = () => {
-    setQuizStep(0)
-    setQuizChoice(null)
-    setQuizScore(0)
-    setQuizDone(false)
-  }
+  setQuizStep(0)
+  setQuizChoice(null)
+  setQuizScore(0)
+  setQuizDone(false)
+  setQuizAnswered(false)   // 🔥 IMPORTANT FIX
+}
 
   return (
     <main className="app">
@@ -150,15 +148,32 @@ function App() {
         <p className="heroText">
           Learn how earthquake waves move underground and how different settings change shaking.
         </p>
-        <div className="heroStats">
-          <span>{describeDepth(depth)}</span>
-          <strong>{describeIntensity(intensity)}</strong>
-        </div>
+        
       </header>
+      <section className="card">
+  <div className="sectionHead">
+   
+    <h2>Foundations</h2>
+  </div>
+
+  <div className="labExplain">
+    <p>
+      <strong>Epicenter:</strong> The point on Earth’s surface directly above where the earthquake starts underground.
+    </p>
+
+    <p>
+      <strong>P-wave (Primary):</strong> A fast, first-arriving wave that moves the ground back-and-forth. It usually causes less damage.
+    </p>
+
+    <p>
+      <strong>S-wave (Secondary):</strong> A slower wave that moves the ground up-and-down or side-to-side and causes stronger shaking.
+    </p>
+  </div>
+</section>
 
       <section className="card labSection">
         <div className="sectionHead">
-          <p className="sectionNum">01</p>
+         
           <h2>Quake Lab</h2>
         </div>
         <div className="labGrid">
@@ -190,6 +205,10 @@ function App() {
               </g>
             </svg>
           </div>
+          <div className="heroStats">
+          <span>{describeDepth(depth)}</span>
+          <strong>{describeIntensity(intensity)}</strong>
+        </div>
 
           <div className="controlPanel">
             <label>
@@ -238,23 +257,12 @@ function App() {
             <p className="hint">Tip: Shallow quakes and loose soil can increase surface shaking.</p>
           </div>
         </div>
-        <div className="labExplain">
-          <p>
-            Epicenter means the point on Earth&apos;s surface right above the underground focus where the
-            earthquake starts.
-          </p>
-          <p>
-            <strong>P-wave (primary):</strong> A fast, first-arriving wave that moves the ground back-and-forth. P-waves usually cause little damage but tell us an earthquake has started.
-          </p>
-          <p>
-            <strong>S-wave (secondary):</strong> A slower wave that moves the ground up-and-down or side-to-side and often produces stronger shaking than the first P-wave.
-          </p>
-        </div>
+        
       </section>
 
       <section className="card">
         <div className="sectionHead">
-          <p className="sectionNum">02</p>
+          
           <h2>Try Real-like Scenarios</h2>
         </div>
         <div className="scenarioRow">
@@ -269,7 +277,7 @@ function App() {
 
       <section className="card waveSection">
         <div className="sectionHead">
-          <p className="sectionNum">03</p>
+          
           <h2>Seismograph View</h2>
         </div>
         <svg viewBox="0 0 320 130" className="seismo" role="img" aria-label="Animated seismic waveform">
@@ -281,28 +289,23 @@ function App() {
 
       <section className="card safetySection">
         <div className="sectionHead">
-          <p className="sectionNum">04</p>
+         
           <h2>Safety Measures</h2>
         </div>
         <p className="safetyIntro"><strong>During strong shaking: Drop, Cover, Hold.</strong> Get down, take cover under sturdy furniture, and hold on until shaking stops.</p>
 
-        <div className="choiceList" role="group" aria-label="Safety checklist">
-          {safetyMeasures.map((item) => (
-            <label
-              key={item.id}
-              className={`choice ${item.recommended ? 'recommended' : ''} ${pickedSafety.includes(item.id) ? 'picked' : ''}`}
-            >
-              <input type="checkbox" checked={pickedSafety.includes(item.id)} onChange={() => toggleSafety(item.id)} />
-              <span>{item.label}</span>
-              {item.recommended && <small className="recommendedNote">Recommended</small>}
-            </label>
-          ))}
-        </div>
+        <div className="choiceList">
+  {safetyMeasures.map((item) => (
+    <div key={item.id} className="choice">
+      {item.label}
+    </div>
+  ))}
+</div>
       </section>
 
       <section className="card quizSection">
         <div className="sectionHead">
-          <p className="sectionNum">05</p>
+        
           <h2>Knowledge Check</h2>
         </div>
         {!quizDone ? (

@@ -129,10 +129,12 @@ input {
   border-radius: 18px;
   overflow: hidden;
   border: 1px solid rgba(255, 255, 255, 0.14);
+  height: fit-content;   /* 🔥 removes extra space */
 }
 
 .scene {
   width: 100%;
+   height: 320px; 
   display: block;
 }
 
