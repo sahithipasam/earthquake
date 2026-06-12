@@ -129,12 +129,16 @@ input {
   border-radius: 18px;
   overflow: hidden;
   border: 1px solid rgba(255, 255, 255, 0.14);
-  height: fit-content;   /* 🔥 removes extra space */
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .scene {
   width: 100%;
-   height: 320px; 
+  height: auto;
+  max-height: 300px;
+  object-fit: contain;
   display: block;
 }
 
@@ -369,5 +373,10 @@ button:hover {
 
   .miniGrid {
     grid-template-columns: 1fr;
+  }
+}
+@media (max-width: 600px) {
+  .scene {
+    max-height: 200px;
   }
 }
