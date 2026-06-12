@@ -1,0 +1,21 @@
+Team Members and Task Division
+
+1. Sahithi (Team Lead)
+
+* Designed complete project structure and flow
+* Developed entire frontend using React (Vite)
+* Implemented earthquake simulation logic (magnitude, depth, soil effects)
+* Designed UI/UX and interactive components
+
+
+2. Manjusha (Design Support)
+
+* Assisted in preparing project documentation
+* Helped in creating storyboard and presentation materials
+*Handled debugging, testing, and optimization
+
+3. Durga (Research & Content Support)
+
+* Collected information on earthquake concepts (P-wave, S-wave, epicenter)
+* Assisted in preparing safety measures and quiz questions
+* Contributed to requirement gathering and idea validation

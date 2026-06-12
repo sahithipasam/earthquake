@@ -1,16 +1,179 @@
-# React + Vite
+# 🌍 Earthquake Explorer – Interactive Simulation
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## 📌 Project Overview
 
-Currently, two official plugins are available:
+Earthquake Explorer is an interactive web-based simulation designed to help users understand how earthquakes occur and how different factors affect ground shaking.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+---
 
-## React Compiler
+## 🎯 Objectives
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+* Explain earthquake concepts (Epicenter, P-waves, S-waves)
+* Provide hands-on simulation experience
+* Educate users about safety measures
+* Improve awareness and preparedness during earthquakes
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## 🚀 Features
+
+### 🔹 Foundations
+
+* Learn core concepts like Epicenter, P-wave, and S-wave
+
+### 🔹 Quake Lab (Simulation)
+
+* Adjust Magnitude, Depth, and Ground Type
+* Real-time visualization of earthquake effects
+
+### 🔹 Real-like Scenarios
+
+* Predefined scenarios
+
+### 🔹 Seismograph View
+
+* Visual representation of seismic waves
+
+### 🔹 Safety Measures
+
+* Guidelines during earthquakes
+
+### 🔹 Knowledge Check
+
+* Interactive quiz with retry option
+
+---
+
+## 🧠 Requirements
+
+### **User Interface**
+
+* Sliders for Magnitude & Depth
+* Ground type dropdown
+* Dynamic shaking display
+
+### **Simulation**
+
+* Epicenter & Focus visualization
+* P-wave & S-wave representation
+* Adjustable parameters with real-time updates
+
+### **Features**
+
+* Foundations (concepts)
+* Quake Lab (simulation)
+* Scenarios, Seismograph
+* Safety measures & Quiz
+
+### **User Interaction**
+
+* Scenario selection
+* Play/Pause controls
+* Quiz retry option
+
+### **Learning Content**
+
+* Earthquake concepts
+* Wave behavior
+* Safety instructions
+
+### **Technical**
+
+* Web-based application
+* Responsive design
+* Smooth animations
+
+---
+
+## 🖼️ Storyboard
+
+![Storyboard](./storyboard.png)
+
+---
+
+## 👤 User Persona
+
+![User Persona](./user_persona.png)
+
+---
+
+## 👥 Team Details
+
+### Team Members and Task Division
+
+### 1. Sahithi (Team Lead)
+
+* Designed complete project structure and flow
+* Implemented earthquake simulation logic (magnitude, depth, soil effects)
+* Designed UI/UX and interactive components
+
+
+### 2. Manjusha (Design Support)
+
+* Assisted in preparing project documentation
+* Helped in creating storyboard and presentation materials
+*Handled debugging, testing, and optimization
+
+### 3. Durga (Research & Content Support)
+
+* Collected information on earthquake concepts (P-wave, S-wave, epicenter)
+* Assisted in preparing safety measures and quiz questions
+* Contributed to requirement gathering and idea validation
+
+
+---
+
+## 🛠️ Technologies Used
+
+* HTML
+* CSS
+* JavaScript
+* React (Vite)
+
+---
+
+## 📂 Project Structure
+
+```
+src/
+  App.jsx
+  main.jsx
+  styles/
+    App.css
+    index.css
+  assets/
+```
+
+---
+
+## ⚙️ How to Run
+
+1. Install dependencies:
+
+```
+npm install
+```
+
+2. Run project:
+
+```
+npm run dev
+```
+
+---
+
+## 🎓 Learning Outcome
+
+* Understand earthquake behavior
+* Learn safety measures
+* Improve awareness
+
+---
+
+## 🎯 Conclusion
+
+This project transforms complex earthquake concepts into an interactive and easy-to-understand learning experience.
+
+## Deployed Link 
+
+https://earthquake-theta.vercel.app/
