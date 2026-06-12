@@ -1,12 +1,12 @@
 # 🌍 Earthquake Explorer – Interactive Simulation
 
-## 📌 Project Overview
+## Project Overview
 
 Earthquake Explorer is an interactive web-based simulation designed to help users understand how earthquakes occur and how different factors affect ground shaking.
 
 ---
 
-## 🎯 Objectives
+##  Objectives
 
 * Explain earthquake concepts (Epicenter, P-waves, S-waves)
 * Provide hands-on simulation experience
@@ -15,7 +15,7 @@ Earthquake Explorer is an interactive web-based simulation designed to help user
 
 ---
 
-## 🚀 Features
+##  Features
 
 ### 🔹 Foundations
 
@@ -44,7 +44,7 @@ Earthquake Explorer is an interactive web-based simulation designed to help user
 
 ---
 
-## 🧠 Requirements
+## Requirements
 
 ### **User Interface**
 
@@ -85,7 +85,7 @@ Earthquake Explorer is an interactive web-based simulation designed to help user
 
 ---
 
-## 🖼️ Storyboard
+##  Storyboard
 
 ![Storyboard](./storyboard.png)
 
@@ -97,7 +97,7 @@ Earthquake Explorer is an interactive web-based simulation designed to help user
 
 ---
 
-## 👥 Team Details
+##  Team Details
 
 ### Team Members and Task Division
 
@@ -123,7 +123,7 @@ Earthquake Explorer is an interactive web-based simulation designed to help user
 
 ---
 
-## 🛠️ Technologies Used
+##  Technologies Used
 
 * HTML
 * CSS
@@ -132,7 +132,7 @@ Earthquake Explorer is an interactive web-based simulation designed to help user
 
 ---
 
-## 📂 Project Structure
+##  Project Structure
 
 ```
 src/
@@ -146,7 +146,7 @@ src/
 
 ---
 
-## ⚙️ How to Run
+##  How to Run
 
 1. Install dependencies:
 
@@ -162,7 +162,7 @@ npm run dev
 
 ---
 
-## 🎓 Learning Outcome
+##  Learning Outcome
 
 * Understand earthquake behavior
 * Learn safety measures
@@ -170,7 +170,7 @@ npm run dev
 
 ---
 
-## 🎯 Conclusion
+##  Conclusion
 
 This project transforms complex earthquake concepts into an interactive and easy-to-understand learning experience.
 
