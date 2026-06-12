@@ -1,0 +1,42 @@
+Earthquake Simulation Project Requirements
+
+1. User Interface
+
+* Interactive sliders for Magnitude and Depth
+* Dropdown for Ground Type selection
+* Dynamic display of shaking intensity
+
+
+2. Simulation Features
+
+* Visualization of Epicenter and Focus
+* Representation of P-waves and S-waves
+* Adjustable earthquake parameters (Magnitude, Depth, Soil type)
+* Real-time updates based on user input
+
+3. Learning Sections
+
+* Foundations (Epicenter, P-wave, S-wave explanations)
+* Quake Lab (interactive simulation)
+* Real-life scenarios
+* Seismograph visualization
+* Safety measures guidance
+* Knowledge check (quiz)
+
+4. User Interaction
+
+* Scenario selection buttons
+* Play/Pause simulation controls
+* Retry quiz functionality
+
+5. Educational Content
+
+* Explanation of earthquake concepts
+* Safety instructions during earthquakes
+* Wave behavior understanding
+
+6. Technical Requirements
+
+* Web-based application
+* Responsive design
+* Smooth animations for simulation 
