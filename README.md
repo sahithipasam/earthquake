@@ -1,46 +1,45 @@
 # 🌍 Earthquake Explorer – Interactive Simulation
 
-## Project Overview
+## Project Title
 
-Earthquake Explorer is an interactive web-based simulation designed to help users understand how earthquakes occur and how different factors affect ground shaking.
+Earthquake Explorer
 
+##  Description
+
+Earthquake Explorer is an interactive web-based simulation that helps users understand how earthquakes occur and how different factors like magnitude, depth, and ground type affect ground shaking.
 ---
 
-##  Objectives
+## Problem Statement
 
-* Explain earthquake concepts (Epicenter, P-waves, S-waves)
-* Provide hands-on simulation experience
-* Educate users about safety measures
-* Improve awareness and preparedness during earthquakes
+Many people lack awareness about how earthquakes work and what safety measures to follow during such disasters. This lack of knowledge can lead to panic and unsafe actions.
+---
+
+## 💡 Solution
+
+This project provides an interactive simulation that:
+
+Visualizes earthquake behavior
+Explains key concepts like epicenter and seismic waves
+Educates users about safety measures
+Helps users learn through real-time interaction and quizzes
 
 ---
 
 ##  Features
 
-### 🔹 Foundations
+Interactive earthquake simulation (magnitude, depth, soil type)
 
-* Learn core concepts like Epicenter, P-wave, and S-wave
+Visualization of P-waves and S-waves
 
-### 🔹 Quake Lab (Simulation)
+Foundations section for learning concepts
 
-* Adjust Magnitude, Depth, and Ground Type
-* Real-time visualization of earthquake effects
+Real-life scenario simulation
 
-### 🔹 Real-like Scenarios
+Seismograph visualization
 
-* Predefined scenarios
+Safety measures guidance
 
-### 🔹 Seismograph View
-
-* Visual representation of seismic waves
-
-### 🔹 Safety Measures
-
-* Guidelines during earthquakes
-
-### 🔹 Knowledge Check
-
-* Interactive quiz with retry option
+Knowledge check quiz with retry option
 
 ---
 
@@ -170,10 +169,13 @@ npm run dev
 
 ---
 
-##  Conclusion
-
-This project transforms complex earthquake concepts into an interactive and easy-to-understand learning experience.
 
 ## Deployed Link 
 
 https://earthquake-theta.vercel.app/
+
+---
+
+## Conclusion
+
+This project helps users understand earthquake concepts in an interactive way and improves awareness about safety measures, making learning both engaging and practical.
