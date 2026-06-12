@@ -1,5 +1,5 @@
 import { useEffect, useMemo, useState } from 'react'
-import './App.css'
+import './styles/App.css'
 
 const soilProfiles = {
   rock: { label: 'Rocky ground', factor: 0.82, color: '#6dd3ce' },
