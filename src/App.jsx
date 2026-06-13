@@ -1,6 +1,8 @@
 import { useEffect, useMemo, useState } from 'react'
 import './styles/App.css'
 
+
+
 const soilProfiles = {
   rock: { label: 'Rocky ground', factor: 0.82, color: '#6dd3ce' },
   mixed: { label: 'Mixed soil', factor: 1, color: '#ffd166' },
@@ -83,6 +85,7 @@ const buildWavePath = (phase, power, running) => {
 }
 
 function App() {
+  const [activeSection, setActiveSection] = useState('home')
   const [magnitude, setMagnitude] = useState(5.7)
   const [depth, setDepth] = useState(14)
   const [soil, setSoil] = useState('mixed')
@@ -163,16 +166,40 @@ function App() {
 
   return (
     <main className="app">
-      <header className="hero card">
-        <h1>Earthquake Explorer</h1>
-        <p className="heroText">
-          Learn how earthquake waves move underground and how different settings change shaking.
-        </p>
-        
-      </header>
+      
+      {activeSection === 'home' && (
+  <header className="hero card">
+    <h1>Earthquake Explorer</h1>
+    <p className="heroText">
+      Learn how earthquake waves move underground and how different settings change shaking.
+    </p>
+    <button onClick={() => setActiveSection('menu')}>
+      Explore
+    </button>
+  </header>
+)}
+{activeSection === 'menu' && (
+  <section className="card">
+    <h2>Select a Section</h2>
+
+    <div className="scenarioRow">
+      <button onClick={() => setActiveSection('foundations')}>Foundations</button>
+      <button onClick={() => setActiveSection('lab')}>Quake Lab</button>
+      <button onClick={() => setActiveSection('scenarios')}>Real Scenarios</button>
+      <button onClick={() => setActiveSection('seismo')}>Seismograph</button>
+      <button onClick={() => setActiveSection('safety')}>Safety</button>
+      <button onClick={() => setActiveSection('quiz')}>Knowledge Check</button>
+    </div>
+
+     <button className="ghost" onClick={() => setActiveSection('home')}>
+      ⬅ Back
+    </button>
+
+  </section>
+)}
+     {activeSection === 'foundations' && (
       <section className="card">
   <div className="sectionHead">
-   
     <h2>Foundations</h2>
   </div>
 
@@ -189,8 +216,11 @@ function App() {
       <strong>S-wave (Secondary):</strong> A slower wave that moves the ground up-and-down or side-to-side and causes stronger shaking.
     </p>
   </div>
+  <button onClick={() => setActiveSection('menu')}>⬅ Back</button>
 </section>
+)}
 
+{activeSection === 'lab' && (
       <section className="card labSection">
         <div className="sectionHead">
          
@@ -277,9 +307,10 @@ function App() {
             <p className="hint">Tip: Shallow quakes and loose soil can increase surface shaking.</p>
           </div>
         </div>
-        
+        <button onClick={() => setActiveSection('menu')}>⬅ Back</button>
       </section>
-
+)}
+  {activeSection === 'scenarios' && (
       <section className="card">
         <div className="sectionHead">
           
@@ -293,7 +324,11 @@ function App() {
             </button>
           ))}
         </div>
+         <button onClick={() => setActiveSection('menu')}>⬅ Back</button>
       </section>
+  )}
+
+  {activeSection === 'seismo' && (
 
       <section className="card waveSection">
         <div className="sectionHead">
@@ -305,7 +340,11 @@ function App() {
           <path d={wavePath} />
         </svg>
         <p className="hint">P-waves usually arrive first. S-waves arrive later and often shake more strongly.</p>
+         <button onClick={() => setActiveSection('menu')}>⬅ Back</button>
       </section>
+  )}
+
+  {activeSection === 'safety' && (
 
       <section className="card safetySection">
         <div className="sectionHead">
@@ -321,7 +360,10 @@ function App() {
     </div>
   ))}
 </div>
+ <button onClick={() => setActiveSection('menu')}>⬅ Back</button>
       </section>
+  )}
+  {activeSection === 'quiz' && (
 
       <section className="card quizSection">
         <div className="sectionHead">
@@ -344,6 +386,24 @@ function App() {
                 </button>
               ))}
             </div>
+
+            <div className="buttonRow">
+  <button
+    type="button"
+    className="checkBtn"
+    onClick={submitQuiz}
+    disabled={!quizAnswered}
+  >
+    Next
+  </button>
+
+  <button
+    className="ghost"
+    onClick={() => setActiveSection('menu')}
+  >
+    ← Back
+  </button>
+</div>
             {quizAnswered && (
               <p className={quiz[quizStep].answer === quizChoice ? 'feedback ok' : 'feedback bad'}>
                 {quiz[quizStep].answer === quizChoice ? 'Correct!' : 'Not correct.'}
@@ -355,7 +415,7 @@ function App() {
                 )}
               </p>
             )}
-            <button type="button" className="checkBtn" onClick={submitQuiz} disabled={!quizAnswered}>Next</button>
+           
           </>
         ) : (
   <>
@@ -372,7 +432,9 @@ function App() {
     </div>
    </>
         )} 
+          
       </section>
+  )}
     </main>
   )
 }

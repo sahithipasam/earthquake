@@ -37,11 +37,28 @@
   border-radius: var(--radius);
   box-shadow: var(--shadow);
   backdrop-filter: blur(12px);
-  padding: 18px;
+
+  max-width: 800px;
+  width: 90%;
+  margin: 40px auto;
+  padding: 24px;
+  text-align: left;
 }
 
 .hero {
-  padding: 30px 22px;
+  max-width: 700px;          /* 🔥 reduce width slightly */
+  width: 90%;
+  margin: 60px auto;         /* center with space */
+
+  padding: 28px 20px;        /* 🔥 reduced height */
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  text-align: center;
+
   background:
     radial-gradient(circle at 8% 18%, rgba(109, 211, 206, 0.28), transparent 30%),
     radial-gradient(circle at 85% 0%, rgba(255, 209, 102, 0.24), transparent 36%),
@@ -191,7 +208,7 @@ select {
 
 .buttonRow {
   display: flex;
-  gap: 10px;
+  gap: 20px;
   flex-wrap: wrap;
 }
 
@@ -212,7 +229,17 @@ button.ghost {
 }
 
 button:hover {
-  transform: translateY(-1px);
+  transform: translateY(-1px) scale(1.05);
+}
+
+.buttonRow {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 24px;
+}
+
+.buttonRow button {
+  min-width: 110px;
 }
 
 .miniGrid {
@@ -249,11 +276,7 @@ button:hover {
   color: var(--text);
 }
 
-.scenarioRow {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 10px;
-}
+
 
 .scenarioBtn {
   border-radius: 16px;
@@ -380,3 +403,65 @@ button:hover {
     max-height: 200px;
   }
 }
+button {
+  transition: 0.2s;
+   margin-top: 20px;
+}
+
+
+
+
+.sectionHead {
+  text-align: center;
+}
+
+.scenarioRow {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  align-items: center;
+}
+
+.scenarioRow button {
+  width: 60%;
+}
+
+.labExplain p {
+  margin-bottom: 16px;
+  line-height: 1.6;
+}
+
+.choiceList {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.choice {
+  display: flex;
+  justify-content: center;   /* 🔥 center text */
+  align-items: center;
+  text-align: center;
+  padding: 12px;
+}
+
+.choiceList button {
+  width: 70%;
+  margin: 0 auto;
+  display: block;
+}
+
+body {
+  color: #e6f1ff;  /* lighter text */
+}
+
+p {
+  color: #cbd5e1;
+}
+
+
+.hero h1 {
+  font-size: 2.8rem;
+}
+
+
