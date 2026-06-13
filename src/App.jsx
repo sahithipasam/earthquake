@@ -7,6 +7,7 @@ const soilProfiles = {
   sand: { label: 'Loose sand', factor: 1.22, color: '#f08a5d' },
 }
 
+
 const quickScenarios = [
   { label: 'School drill', magnitude: 4.8, depth: 22, soil: 'rock' },
   { label: 'Town shake', magnitude: 6.1, depth: 13, soil: 'mixed' },
@@ -31,7 +32,23 @@ const quiz = [
   },
   {
     q: 'Epicenter is...',
-    options: ['The point underground where rupture starts', 'The point on the surface above the rupture', 'A location of volcano'],
+    options: [
+      'The point underground where rupture starts',
+      'The point on the surface above the rupture',
+      'A location of volcano',
+    ],
+    answer: 1,
+  },
+
+
+  {
+    q: 'A 6.5 magnitude earthquake occurs at shallow depth in loose soil. What will be the shaking level?',
+    options: ['Low shaking', 'Moderate shaking', 'Strong shaking', 'No effect'],
+    answer: 2,
+  },
+  {
+    q: 'Which type of wave usually causes more damage?',
+    options: ['P-wave', 'S-wave', 'Sound wave', 'Light wave'],
     answer: 1,
   },
 ]
@@ -77,6 +94,8 @@ function App() {
   const [quizAnswered, setQuizAnswered] = useState(false)
   const [quizScore, setQuizScore] = useState(0)
   const [quizDone, setQuizDone] = useState(false)
+  
+
 
   useEffect(() => {
     if (!running) return undefined
@@ -124,9 +143,9 @@ function App() {
     if (!quizAnswered) return
 
     if (quizStep === quiz.length - 1) {
-      setQuizDone(true)
-      return
-    }
+  setQuizDone(true)
+  return
+}
 
     setQuizStep((old) => old + 1)
     setQuizChoice(null)
@@ -139,6 +158,7 @@ function App() {
   setQuizScore(0)
   setQuizDone(false)
   setQuizAnswered(false)   // 🔥 IMPORTANT FIX
+
 }
 
   return (
@@ -338,12 +358,20 @@ function App() {
             <button type="button" className="checkBtn" onClick={submitQuiz} disabled={!quizAnswered}>Next</button>
           </>
         ) : (
-          <div className="resultBox">
-            <h3>Your Score: {quizScore} / {quiz.length}</h3>
-            <p>{quizScore === quiz.length ? 'Awesome! You are quake-ready.' : 'Great effort. Try once more to improve your score.'}</p>
-            <button type="button" className="checkBtn" onClick={resetQuiz}>Retry Quiz</button>
-          </div>
-        )}
+  <>
+    <div className="resultBox">
+      <h3>Your Score: {quizScore} / {quiz.length}</h3>
+      <p>
+        {quizScore === quiz.length
+          ? 'Awesome! You are quake-ready.'
+          : 'Great effort. Try once more to improve your score.'}
+      </p>
+      <button type="button" className="checkBtn" onClick={resetQuiz}>
+        Retry Quiz
+      </button>
+    </div>
+   </>
+        )} 
       </section>
     </main>
   )
